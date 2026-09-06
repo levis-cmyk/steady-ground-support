@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steady Ground Support | Confidential Addiction &amp; Mental Health Support, Kenya</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#20241f;
+    --sand:#e9e1d1;
+    --sand-deep:#ddd2ba;
+    --sienna:#a2502c;
+    --sienna-deep:#7d3b20;
+    --olive:#4d5c3a;
+    --olive-deep:#37432a;
+    --night:#232b23;
+    --stone:#f4efe4;
+    --line:rgba(32,36,31,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .font-display{font-family:'Zilla Slab', serif;}
+  .strata{
+    background:
+      linear-gradient(180deg, transparent 0%, transparent 62%, var(--sand) 62%, var(--sand) 74%, var(--sand-deep) 74%, var(--sand-deep) 100%);
+  }
+  .horizon-line{
+    height:2px;
+    background:linear-gradient(90deg, transparent 0%, var(--sienna) 15%, var(--sienna) 85%, transparent 100%);
+  }
+  .grain{
+    position:relative;
+  }
+  .grain::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  .btn-primary{
+    background:var(--sienna);
+    color:var(--stone);
+    transition:background .18s ease, transform .18s ease;
+  }
+  .btn-primary:hover{background:var(--sienna-deep); transform:translateY(-1px);}
+  .btn-secondary{
+    background:transparent;
+    color:var(--ink);
+    border:1.5px solid var(--ink);
+    transition:all .18s ease;
+  }
+  .btn-secondary:hover{background:var(--ink); color:var(--stone);}
+  .card{
+    background:var(--stone);
+    border:1px solid var(--line);
+  }
+  .path-card{
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .path-card:hover{transform:translateY(-2px); box-shadow:0 8px 24px -12px rgba(32,36,31,0.25);}
+  .path-card.active{border-color:var(--sienna); background:var(--sand);}
+  .q-option{
+    cursor:pointer;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .q-option:hover{background:var(--sand);}
+  .q-option.selected{background:var(--sienna); color:var(--stone); border-color:var(--sienna);}
+  .progress-track{background:var(--sand-deep);}
+  .progress-fill{background:var(--sienna); transition:width .3s ease;}
+  .fade-in{animation:fadeIn .5s ease both;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  @media (prefers-reduced-motion: reduce){
+    .fade-in{animation:none;}
+    .path-card:hover, .btn-primary:hover{transform:none;}
+  }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline:2px solid var(--sienna);
+    outline-offset:2px;
+  }
+  .crisis-strip{background:var(--night); color:var(--stone);}
+</style>
+</head>
+<body class="grain">
+
+<!-- CRISIS STRIP (always visible) -->
+<div class="crisis-strip text-xs sm:text-sm py-2 px-4 text-center">
+  In immediate danger or crisis? Call <a href="tel:1192" class="underline font-medium">NACADA 1192</a> (toll-free) or go to your nearest hospital emergency department now.
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-40 bg-[var(--stone)]/95 backdrop-blur border-b" style="border-color:var(--line);">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+    <div class="font-display text-lg sm:text-xl font-semibold tracking-tight">Steady Ground <span style="color:var(--sienna);">Support</span></div>
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#assessment" class="hover:opacity-70">Self-Assessment</a>
+      <a href="#services" class="hover:opacity-70">Services</a>
+      <a href="#resources" class="hover:opacity-70">Books &amp; Guides</a>
+      <a href="#about" class="hover:opacity-70">About</a>
+    </nav>
+    <a id="nav-cta" href="#" target="_blank" rel="noopener" class="btn-primary text-sm font-medium px-4 py-2 rounded-full">Message us on WhatsApp</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="strata pt-16 pb-24 sm:pt-24 sm:pb-32 px-5 sm:px-8 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto relative">
+    <p class="uppercase tracking-[0.2em] text-xs font-medium mb-5" style="color:var(--sienna-deep);">Confidential support &middot; Nairobi &amp; nationwide referral network</p>
+    <h1 class="font-display text-4xl sm:text-6xl leading-[1.08] font-semibold max-w-3xl">
+      You don't have to carry this alone.
+    </h1>
+    <p class="mt-6 text-base sm:text-lg max-w-xl leading-relaxed" style="color:var(--ink); opacity:0.85;">
+      Whether it's your own struggle with substance use, or you're watching someone you love disappear into it &mdash; there is solid ground here. Confidential guidance, real referrals, no pressure, no judgment.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="#" class="hero-whatsapp-cta btn-primary font-medium px-6 py-3.5 rounded-full text-sm sm:text-base" target="_blank" rel="noopener">Start a free, confidential chat</a>
+      <a href="#assessment" class="btn-secondary font-medium px-6 py-3.5 rounded-full text-sm sm:text-base">Take the self-assessment</a>
+    </div>
+    <div class="horizon-line mt-16 sm:mt-24"></div>
+    <p class="mt-4 text-xs sm:text-sm opacity-60">Licensed practitioner &middot; Connected to an inpatient rehabilitation centre &amp; a vetted network of treatment facilities across Kenya</p>
+  </div>
+</section>
+
+<!-- TWO PATHS -->
+<section class="py-20 px-5 sm:px-8" id="paths">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold text-center">Where are you starting from?</h2>
+    <p class="text-center mt-3 opacity-75 max-w-lg mx-auto">There's no wrong door. Choose what fits, and we'll meet you there.</p>
+    <div class="grid sm:grid-cols-2 gap-6 mt-12">
+      <a href="#assessment" onclick="selectPath('self')" class="path-card card rounded-2xl p-8">
+        <p class="text-xs uppercase tracking-widest opacity-60 mb-3">For yourself</p>
+        <h3 class="font-display text-2xl font-semibold mb-3">I'm struggling with substance use</h3>
+        <p class="text-sm leading-relaxed opacity-80">Take a private self-assessment, understand your options, and talk to someone who won't judge you for being honest.</p>
+        <span class="inline-block mt-5 text-sm font-medium" style="color:var(--sienna-deep);">Begin here &rarr;</span>
+      </a>
+      <a href="#assessment" onclick="selectPath('family')" class="path-card card rounded-2xl p-8">
+        <p class="text-xs uppercase tracking-widest opacity-60 mb-3">For a loved one</p>
+        <h3 class="font-display text-2xl font-semibold mb-3">Someone I love is struggling</h3>
+        <p class="text-sm leading-relaxed opacity-80">Get guidance on how to approach them, what treatment options exist, and how to care for yourself while you support them.</p>
+        <span class="inline-block mt-5 text-sm font-medium" style="color:var(--sienna-deep);">Begin here &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ASSESSMENT -->
+<section class="py-20 px-5 sm:px-8" id="assessment" style="background:var(--sand);">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold text-center">Self-Assessment</h2>
+    <p class="text-center mt-3 opacity-75 text-sm">Private. Not saved anywhere. Takes about 2 minutes.</p>
+
+    <!-- Path selector (visible if not yet chosen) -->
+    <div id="path-selector" class="mt-10 grid sm:grid-cols-2 gap-4">
+      <button onclick="selectPath('self')" class="path-card card rounded-xl p-5 text-left" data-path-btn="self">
+        <span class="font-medium">This is about me</span>
+      </button>
+      <button onclick="selectPath('family')" class="path-card card rounded-xl p-5 text-left" data-path-btn="family">
+        <span class="font-medium">This is about someone I love</span>
+      </button>
+    </div>
+
+    <!-- Quiz body -->
+    <div id="quiz-body" class="mt-10 hidden">
+      <div class="progress-track h-1.5 rounded-full overflow-hidden mb-8">
+        <div id="progress-fill" class="progress-fill h-full" style="width:0%;"></div>
+      </div>
+      <div id="question-container" class="card rounded-2xl p-7 sm:p-9 fade-in"></div>
+      <div class="flex justify-between mt-6">
+        <button id="back-btn" onclick="prevQuestion()" class="text-sm font-medium opacity-60 hover:opacity-100">&larr; Back</button>
+        <button onclick="resetQuiz()" class="text-sm font-medium opacity-60 hover:opacity-100">Start over</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="results-container" class="mt-10 hidden card rounded-2xl p-7 sm:p-9 fade-in"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-20 px-5 sm:px-8" id="services">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold text-center mb-14">How we can help</h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="card rounded-2xl p-7">
+        <div class="w-10 h-1 rounded-full mb-5" style="background:var(--sienna);"></div>
+        <h3 class="font-display text-xl font-semibold mb-2">Free Initial Consultation</h3>
+        <p class="text-sm leading-relaxed opacity-80">A private conversation, no cost, no obligation. We listen first and figure out what actually fits your situation.</p>
+      </div>
+      <div class="card rounded-2xl p-7">
+        <div class="w-10 h-1 rounded-full mb-5" style="background:var(--olive);"></div>
+        <h3 class="font-display text-xl font-semibold mb-2">Rehab Referrals</h3>
+        <p class="text-sm leading-relaxed opacity-80">Direct placement support into our inpatient facility or our vetted network of licensed treatment centres across Kenya &mdash; matched to need and budget.</p>
+      </div>
+      <div class="card rounded-2xl p-7">
+        <div class="w-10 h-1 rounded-full mb-5" style="background:var(--sienna-deep);"></div>
+        <h3 class="font-display text-xl font-semibold mb-2">Family Support Guidance</h3>
+        <p class="text-sm leading-relaxed opacity-80">Practical guidance for families &mdash; how to talk to a loved one, set boundaries, and hold on to your own wellbeing through it.</p>
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <a href="#" class="services-whatsapp-cta btn-primary font-medium px-6 py-3.5 rounded-full text-sm sm:text-base inline-block" target="_blank" rel="noopener">Book a free consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS / GUIDES -->
+<section class="py-20 px-5 sm:px-8" id="resources" style="background:var(--sand);">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold text-center mb-4">Resources you can keep</h2>
+    <p class="text-center opacity-75 max-w-lg mx-auto mb-14">Written for real situations, not textbooks.</p>
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="card rounded-2xl p-8 flex flex-col">
+        <p class="text-xs uppercase tracking-widest opacity-60 mb-3">For individuals &amp; families</p>
+        <h3 class="font-display text-2xl font-semibold mb-2">Journey to Freedom</h3>
+        <p class="text-sm leading-relaxed opacity-80 flex-grow">A grounded, honest guide through recovery &mdash; for those going through it, and those walking alongside them.</p>
+        <div class="flex items-center justify-between mt-6">
+          <span class="font-display text-xl font-semibold">KES 500</span>
+          <a href="#" class="book-whatsapp-cta btn-secondary text-sm font-medium px-5 py-2.5 rounded-full" target="_blank" rel="noopener">Order via WhatsApp</a>
+        </div>
+      </div>
+      <div class="card rounded-2xl p-8 flex flex-col">
+        <p class="text-xs uppercase tracking-widest opacity-60 mb-3">For practitioners</p>
+        <h3 class="font-display text-2xl font-semibold mb-2">Clinical Documentation Made Simple</h3>
+        <p class="text-sm leading-relaxed opacity-80 flex-grow">A practical guide to clean, compliant clinical documentation for counsellors and treatment staff in the Kenyan context.</p>
+        <div class="flex items-center justify-between mt-6">
+          <span class="font-display text-xl font-semibold">Ask for pricing</span>
+          <a href="#" class="guide-whatsapp-cta btn-secondary text-sm font-medium px-5 py-2.5 rounded-full" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-20 px-5 sm:px-8" id="about">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-6">Why "Steady Ground"</h2>
+    <p class="leading-relaxed opacity-80">
+      Addiction unsettles everything &mdash; trust, routine, safety, hope. Our work is to help you find solid footing again: a licensed counsellor, an honest first conversation, and a clear next step, whether that's ongoing support, family guidance, or placement into treatment. Everything shared here stays confidential.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="crisis-strip py-16 px-5 sm:px-8">
+  <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10">
+    <div>
+      <div class="font-display text-lg font-semibold mb-3">Steady Ground Support</div>
+      <p class="text-sm opacity-70 leading-relaxed">Confidential mental health &amp; addiction support, Nairobi and nationwide.</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-widest opacity-50 mb-3">Talk to us</p>
+      <a href="#" class="footer-whatsapp-cta text-sm underline block mb-2" target="_blank" rel="noopener">WhatsApp Business</a>
+      <p class="text-sm opacity-70">NACADA helpline: <a href="tel:1192" class="underline">1192</a> (toll-free, 24/7)</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-widest opacity-50 mb-3">If this is an emergency</p>
+      <p class="text-sm opacity-70 leading-relaxed">Go to your nearest hospital emergency department, or call 1192. This site does not provide emergency or crisis intervention.</p>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-white/10 text-xs opacity-50">
+    &copy; <span id="year"></span> Steady Ground Support. All conversations are confidential.
+  </div>
+</footer>
+
+<script>
+/* ============ CONFIG ============ */
+const WHATSAPP_NUMBER = "254707848707"; // TODO: replace with real WhatsApp Business number, digits only, country code first, no +
+const MESSAGES = {
+  general: "Hi, I'd like to book a free confidential consultation with Steady Ground Support.",
+  book: "Hi, I'd like to order a copy of \"Journey to Freedom\" (KES 500).",
+  guide: "Hi, I'm a practitioner interested in the \"Clinical Documentation Made Simple\" guide. Could you share pricing?",
+  quizSelf: "Hi, I just completed the self-assessment on your site (for myself) and I'd like to talk to someone.",
+  quizFamily: "Hi, I just completed the self-assessment on your site (about a loved one) and I'd like some guidance."
+};
+
+function waLink(message){
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('#nav-cta, .hero-whatsapp-cta, .services-whatsapp-cta, .footer-whatsapp-cta')
+  .forEach(el => el.href = waLink(MESSAGES.general));
+document.querySelectorAll('.book-whatsapp-cta').forEach(el => el.href = waLink(MESSAGES.book));
+document.querySelectorAll('.guide-whatsapp-cta').forEach(el => el.href = waLink(MESSAGES.guide));
+
+/* ============ ASSESSMENT DATA ============ */
+const QUESTIONS = {
+  self: [
+    { q: "Over the past month, has your substance use caused problems at work, school, or home?", options: [["Not at all", 0], ["Sometimes", 1], ["Often", 2]] },
+    { q: "Have you tried to cut down or stop, without success?", options: [["No", 0], ["Once or twice", 1], ["Repeatedly", 2]] },
+    { q: "Do people close to you seem worried about your use?", options: [["No", 0], ["A little", 1], ["Yes, clearly", 2]] },
+    { q: "Have you used more, or more often, than you intended to?", options: [["Rarely", 0], ["Sometimes", 1], ["Regularly", 2]] },
+    { q: "Has your use affected your physical or mental health?", options: [["Not noticeably", 0], ["Somewhat", 1], ["Significantly", 2]] }
+  ],
+  family: [
+    { q: "How long have you noticed changes in your loved one's behaviour?", options: [["Recently (weeks)", 0], ["A few months", 1], ["A year or more", 2]] },
+    { q: "Has their substance use affected their relationships, work, or safety?", options: [["Not that I've seen", 0], ["Somewhat", 1], ["Significantly", 2]] },
+    { q: "Have there been any incidents of financial strain, legal trouble, or danger?", options: [["No", 0], ["One or two", 1], ["Multiple", 2]] },
+    { q: "How would you describe your own stress level around this situation?", options: [["Manageable", 0], ["High", 1], ["Overwhelming", 2]] },
+    { q: "Has your loved one shown any openness to getting help?", options: [["Yes, somewhat open", 0], ["Unsure / resistant", 1], ["Actively refuses", 2]] }
+  ]
+};
+
+let currentPath = null;
+let currentIndex = 0;
+let answers = [];
+
+function selectPath(path){
+  currentPath = path;
+  currentIndex = 0;
+  answers = new Array(QUESTIONS[path].length).fill(null);
+  document.getElementById('path-selector').classList.add('hidden');
+  document.getElementById('results-container').classList.add('hidden');
+  document.getElementById('quiz-body').classList.remove('hidden');
+  document.querySelectorAll('[data-path-btn]').forEach(b=>{
+    b.classList.toggle('active', b.dataset.pathBtn === path);
+  });
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const set = QUESTIONS[currentPath];
+  const item = set[currentIndex];
+  const container = document.getElementById('question-container');
+  container.classList.remove('fade-in'); void container.offsetWidth; container.classList.add('fade-in');
+
+  const pct = Math.round(((currentIndex) / set.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('back-btn').style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+
+  let html = `<p class="text-xs uppercase tracking-widest opacity-50 mb-2">Question ${currentIndex+1} of ${set.length}</p>`;
+  html += `<h3 class="font-display text-xl sm:text-2xl font-semibold mb-6">${item.q}</h3>`;
+  html += `<div class="flex flex-col gap-3">`;
+  item.options.forEach(([label, val], i) => {
+    const selected = answers[currentIndex] === val ? 'selected' : '';
+    html += `<button class="q-option ${selected} text-left px-5 py-3.5 rounded-xl border" style="border-color:var(--line);" onclick="answerQuestion(${val})">${label}</button>`;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function answerQuestion(val){
+  answers[currentIndex] = val;
+  if(currentIndex < QUESTIONS[currentPath].length - 1){
+    currentIndex++;
+    renderQuestion();
+  } else {
+    document.getElementById('progress-fill').style.width = '100%';
+    showResults();
+  }
+}
+
+function prevQuestion(){
+  if(currentIndex > 0){
+    currentIndex--;
+    renderQuestion();
+  }
+}
+
+function resetQuiz(){
+  document.getElementById('quiz-body').classList.add('hidden');
+  document.getElementById('results-container').classList.add('hidden');
+  document.getElementById('path-selector').classList.remove('hidden');
+  currentPath = null;
+}
+
+function showResults(){
+  document.getElementById('quiz-body').classList.add('hidden');
+  const total = answers.reduce((a,b) => a + b, 0);
+  const max = QUESTIONS[currentPath].length * 2;
+  let level, message, tone;
+
+  if(total <= max * 0.3){
+    level = "Lower concern";
+    tone = currentPath === 'self'
+      ? "What you're describing doesn't sound acute right now, but if you have questions or things change, we're here."
+      : "Things sound manageable at the moment, but a short conversation can still help you plan ahead.";
+  } else if(total <= max * 0.65){
+    level = "Moderate concern";
+    tone = currentPath === 'self'
+      ? "What you've shared suggests it may help to talk to someone soon &mdash; not because something is wrong with you, but because support makes this easier."
+      : "This sounds like a situation worth getting guidance on soon. A short conversation can help you figure out next steps.";
+  } else {
+    level = "Higher concern";
+    tone = currentPath === 'self'
+      ? "What you've described suggests real support could make a meaningful difference right now. We'd encourage you to reach out today."
+      : "This sounds like a heavy situation to be carrying. We'd strongly encourage reaching out today so you're not navigating it alone.";
+  }
+
+  const waMsg = currentPath === 'self' ? MESSAGES.quizSelf : MESSAGES.quizFamily;
+  const results = document.getElementById('results-container');
+  results.classList.remove('hidden');
+  results.innerHTML = `
+    <p class="text-xs uppercase tracking-widest opacity-50 mb-2">Your result</p>
+    <h3 class="font-display text-2xl font-semibold mb-3">${level}</h3>
+    <p class="text-sm leading-relaxed opacity-80 mb-6">${tone}</p>
+    <p class="text-xs opacity-60 mb-6">This is a screening tool, not a diagnosis. Only a licensed practitioner can assess your situation fully &mdash; and that conversation is free.</p>
+    <div class="flex flex-wrap gap-3">
+      <a href="${waLink(waMsg)}" target="_blank" rel="noopener" class="btn-primary font-medium px-6 py-3 rounded-full text-sm">Talk to a counsellor now</a>
+      <button onclick="resetQuiz()" class="btn-secondary font-medium px-6 py-3 rounded-full text-sm">Take again</button>
+    </div>
+    <p class="text-xs opacity-50 mt-6 pt-6 border-t" style="border-color:var(--line);">In crisis? Call NACADA <a href="tel:1192" class="underline">1192</a> (toll-free, 24/7) or go to your nearest hospital emergency department.</p>
+  `;
+  results.scrollIntoView({behavior:'smooth', block:'center'});
+}
+</script>
+</body>
+</html>
